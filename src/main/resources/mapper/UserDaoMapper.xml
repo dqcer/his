@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dqcer.dao.UserDao">
+	<resultMap type="com.dqcer.entity.User" id="user">
+		<id property="id" column="id" />
+		<result property="addrs" column="addrs" />
+		<result property="birth" column="birth" />
+		<result property="email" column="email" />
+		<result property="filname" column="filname" />
+		<result property="rtime" column="rtime" />
+		<result property="sex" column="sex" />
+		<result property="tel" column="tel" />
+		<result property="tname" column="tname" />
+		<result property="uname" column="uname" />
+		<result property="upass" column="upass" />
+		<result property="utype" column="utype" />
+		<result property="xbbjs" column="xbbjs"/>
+		<result property="xno" column="xno"/>
+	</resultMap>
+
+	<select id="findAll" resultMap="user">
+
+		SELECT  * FROM sysuser
+	</select>
+<select id="findUserByName" resultMap="user">
+select * from sysuser where uname = #{username}
+</select>
+	<select id="findUserByNameAndPass" resultMap="user">
+	select * from sysuser where uname = #{username} and upass = #{password}
+	</select>
+<select id="findCount" resultType="int">
+	select count(*) from sysuser where 1=1
+	<if test="uname != null and uname != ''">
+		and uname like '%${uname}%'
+	</if><if test="tname != null and tname != ''">
+	and tname like '%${tname}%'
+	</if>
+
+</select>
+	<select id="findByQo" resultMap="user">
+		select * from sysuser where 1=1
+		<if test="uname != null and uname != ''">
+			and uname like '%${uname}%'
+		</if><if test="tname != null and tname != ''">
+			and tname like '%${tname}%'
+		</if>
+		limit #{begin} , #{size}
+	</select>
+
+</mapper>

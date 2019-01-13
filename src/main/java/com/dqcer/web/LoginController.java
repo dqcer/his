@@ -27,7 +27,7 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping(value = "/login")
     public String login(HttpServletRequest request) {
 
         String pagerandom = request.getParameter("pagerandom")==null?"":request.getParameter("pagerandom");

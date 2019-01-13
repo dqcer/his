@@ -90,7 +90,7 @@ String endblno = request.getParameter("endblno")==null?"":request.getParameter("
 
 <%
  HashMap mmm = new HashMap();%> 
-病历编号 &nbsp;:&nbsp; <%=Info.getselect("blno","bl","blno"," 1=1 ")%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+病历编号 &nbsp;:&nbsp; <%=Info.getselect("blno","bl","blno"," 1=1 ")%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;<input type=submit class='' value='查询信息' /> &nbsp;&nbsp;<input type=button   class=''  value='添加信息' onclick="add();" /> &nbsp;&nbsp;</td>
     </tr>
 </table>

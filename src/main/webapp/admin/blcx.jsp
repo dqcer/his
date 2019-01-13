@@ -182,7 +182,7 @@ for(HashMap map:list){ %>
                             <td height="28" align="center" bgcolor="#FFFFFF"><%=map.get("zdjg")%></td>
                             <td height="28" align="center" bgcolor="#FFFFFF"><a href="blxg.jsp?id=<%=map.get("id")%>">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;
                                 <a style="display:none;" onclick="return confirm('确定要住院?')" href="blcx.jsp?scid=<%=map.get("id")%>">删除</a>
-                                <a style="" onclick="return confirm('确定要删除这条记录吗?')" href="blcx.jsp?zyid=<%=map.get("id")%>">住院</a>
+                                <a style="" onclick="return confirm('确定要将该病人进行住院操作?')" href="blcx.jsp?zyid=<%=map.get("id")%>">住院</a>
                             </td>
 </tr>
 <%}%>

@@ -1,0 +1,6 @@
+4，把 my.ini 拷贝到其他盘，比如D盘。
+max_connections=1000
+
+7，打开开始菜单，在命令行菜单项上，右键 -> 管理员运行。执行命令：
+
+copy "D:\my.ini" "C:\Program Files (x86)\MySQL\MySQL Server 5.5"
